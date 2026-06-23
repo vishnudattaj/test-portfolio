@@ -87,40 +87,6 @@ function sleep(ms) {
 typeTerminal();
 
 // ============================================
-// 3D Parallax Card Tilt Effect
-// ============================================
-(function initTiltCards() {
-  if (prefersReduced) return;
-  const cards = document.querySelectorAll('.tilt-card');
-  
-  cards.forEach(card => {
-    const content = card.querySelector('.parallax-content') || card;
-    
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      
-      const rotateX = ((y - centerY) / centerY) * -4; // Max 4 deg rotation
-      const rotateY = ((x - centerX) / centerX) * 4;
-      
-      content.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
-    });
-    
-    card.addEventListener('mouseleave', () => {
-      content.style.transform = `rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-      content.style.transition = 'transform 0.4s ease-out';
-    });
-    
-    card.addEventListener('mouseenter', () => {
-      content.style.transition = 'none'; // Snap to mouse instantly once inside
-    });
-  });
-})();
-
-// ============================================
 // Scroll reveal with staging
 // ============================================
 const observer = new IntersectionObserver((entries) => {
@@ -132,7 +98,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal, .log-grid, .stack-grid, .contact-links').forEach(el => observer.observe(el));
 
 // ============================================
 // Nav background state on scroll
