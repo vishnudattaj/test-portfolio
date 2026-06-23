@@ -372,3 +372,26 @@ ul { list-style: none; }
 }
 .stack-col li { font-family: var(--font-display); font-size: 15px; color: var(--ink-dim); padding: 7px 0; }
 @media (max-width: 700px) { .stack-grid { grid-template-columns: 1fr; gap:
+
+                                         /* ============================================
+   FORCE SOLID STYLE FOR ALL MODULES
+   ============================================ */
+
+.glass-panel, .paper-card, .project {
+  background: var(--bg-raised) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: none !important;
+  border-radius: 6px !important;
+}
+
+.glass-panel::before {
+  display: none !important;
+}
+
+/* Ensure hover states match the old-style log/contact */
+.glass-panel:hover, .paper-card:hover, .project:hover {
+  background: var(--bg-raised-2) !important;
+  border-color: var(--line-bright) !important;
+}
