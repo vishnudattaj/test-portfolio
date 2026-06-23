@@ -34,7 +34,7 @@ async function simulateCompilation(element, duration) {
   element.className = 'compile';
   while (Date.now() - start < duration) {
     element.textContent = Array.from({length: 15}).map(() => chars[Math.floor(Math.random() * chars.length)]).join('');
-    await sleep(100);
+    await sleep(60);
   }
   element.textContent = '';
   element.className = 'out';
