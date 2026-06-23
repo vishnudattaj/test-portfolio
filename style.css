@@ -296,7 +296,7 @@ ul { list-style: none; }
 }
 .hero-name .line1, .hero-name .line2 { display: block; font-size: clamp(40px, 8vw, 96px); }
 .hero-name .line1 { text-shadow: 0 0 30px rgba(255,255,255,0.05); }
-.hero-name .line2 { color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.15); }
+.hero-name .line2 { color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,1); }
 .blip { color: var(--neon-green); -webkit-text-stroke: 0; text-shadow: 0 0 15px var(--neon-green); }
 
 .hero-tag { margin-top: 24px; max-width: 600px; font-size: 17px; color: var(--ink-dim); line-height: 1.7; }
