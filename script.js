@@ -72,7 +72,7 @@ async function typeTerminal() {
       // Simulate data stream parsing
       const compileSpan = document.createElement('span');
       row.appendChild(compileSpan);
-      await simulateCompilation(compileSpan, 250);
+      await simulateCompilation(compileSpan, 1000);
       
       compileSpan.textContent = line.text;
       await sleep(300);
