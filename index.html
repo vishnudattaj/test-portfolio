@@ -9,6 +9,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  /* Forces all two-column grids to stack vertically */
+  .log-grid, .project-grid, .contact-links {
+    grid-template-columns: 1fr !important;
+  }
+</style>
 </head>
 <body>
 
@@ -128,7 +134,7 @@
           </div>
           <span class="paper-journal">Wharton Sports<br>Analytics Journal</span>
         </div>
-        <div class="paper-right parallax-content">
+        <div class="paper-right">
           <h3 class="paper-title">Beyond the Expert: An Algorithmic Approach to Correcting Expert Bias in Fantasy Football Projections</h3>
           <p class="paper-desc">
             Original research evaluating whether machine learning can mitigate cognitive bias in fantasy football
@@ -162,7 +168,7 @@
             <span class="module-id">MOD-01</span>
             <div class="status-indicator"><span class="pulse amber"></span> QUANT_ENGINE</div>
           </div>
-          <div class="project-content parallax-content">
+          <div class="project-content">
             <div class="project-meta">
               <span class="project-date">Apr – Jun 2026</span>
               <span class="project-stack">Python · Pandas · NumPy</span>
@@ -188,7 +194,7 @@
             <span class="module-id">MOD-02</span>
             <div class="status-indicator"><span class="pulse green"></span> ML_PIPELINE</div>
           </div>
-          <div class="project-content parallax-content">
+          <div class="project-content">
             <div class="project-meta">
               <span class="project-date">Aug 2025 - May 2026</span>
               <span class="project-stack">Python · XGBoost · scikit-learn · Pandas</span>
@@ -214,7 +220,7 @@
             <span class="module-id">MOD-03</span>
             <div class="status-indicator"><span class="pulse amber"></span> SYS_PROG</div>
           </div>
-          <div class="project-content parallax-content">
+          <div class="project-content">
             <div class="project-meta">
               <span class="project-date">Feb – Apr 2026</span>
               <span class="project-stack">C</span>
@@ -240,7 +246,7 @@
             <span class="module-id">MOD-04</span>
             <div class="status-indicator"><span class="pulse green"></span> RAG_SYS</div>
           </div>
-          <div class="project-content parallax-content">
+          <div class="project-content">
             <div class="project-meta">
               <span class="project-date">Oct 2024 – Aug 2025</span>
               <span class="project-stack">Python · Flask · XGBoost · LangChain · NBA API</span>
@@ -266,7 +272,7 @@
             <span class="module-id">MOD-05</span>
             <div class="status-indicator"><span class="pulse amber"></span> NLP_ENGINE</div>
           </div>
-          <div class="project-content parallax-content">
+          <div class="project-content">
             <div class="project-meta">
               <span class="project-date">Jun – Aug 2025</span>
               <span class="project-stack">Python · NLTK · WordNet</span>
@@ -292,7 +298,7 @@
             <span class="module-id">MOD-06</span>
             <div class="status-indicator"><span class="pulse green"></span> FULL_STACK</div>
           </div>
-          <div class="project-content parallax-content">
+          <div class="project-content">
             <div class="project-meta">
               <span class="project-date">Oct 2024 - Apr 2025</span>
               <span class="project-stack">Flask · Python · JavaScript · XGBoost</span>
@@ -365,19 +371,19 @@
       <h2 class="contact-title">Establish Connection.</h2>
       <p class="contact-sub">Open to research collaborations, internships, and quant/ML engineering roles.</p>
       <div class="contact-links reveal">
-        <a href="mailto:vishnudattaj@gmail.com" class="glass-panel contact-link parallax-content">
+        <a href="mailto:vishnudattaj@gmail.com" class="glass-panel contact-link">
           <span class="contact-label">SECURE_EMAIL</span>
           <span class="contact-value">vishnudattaj@gmail.com</span>
         </a>
-        <a href="https://linkedin.com/in/vjayanti" target="_blank" rel="noopener" class="glass-panel contact-link parallax-content">
+        <a href="https://linkedin.com/in/vjayanti" target="_blank" rel="noopener" class="glass-panel contact-link">
           <span class="contact-label">NETWORK</span>
           <span class="contact-value">/in/vjayanti</span>
         </a>
-        <a href="https://github.com/vishnudattaj" target="_blank" rel="noopener" class="glass-panel contact-link parallax-content">
+        <a href="https://github.com/vishnudattaj" target="_blank" rel="noopener" class="glass-panel contact-link">
           <span class="contact-label">SOURCE_CODE</span>
           <span class="contact-value">/vishnudattaj</span>
         </a>
-        <a href="https://scholar.google.com/citations?hl=en&user=XA1tLwkAAAAJ" target="_blank" rel="noopener" class="glass-panel contact-link parallax-content">
+        <a href="https://scholar.google.com/citations?hl=en&user=XA1tLwkAAAAJ" target="_blank" rel="noopener" class="glass-panel contact-link">
           <span class="contact-label">ACADEMIC</span>
           <span class="contact-value">Google Scholar ↗</span>
         </a>
