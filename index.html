@@ -9,12 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-  /* Forces all two-column grids to stack vertically */
-  .log-grid, .project-grid, .contact-links {
-    grid-template-columns: 1fr !important;
-  }
-</style>
 </head>
 <body>
 
@@ -25,13 +19,13 @@
   <div class="nav-inner">
     <a href="#top" class="nav-logo">VDJ<span class="cursor">_</span></a>
     <div class="nav-links">
-      <a href="#log"><span class="nav-num">01</span>log</a>
+      <a href="#log"><span class="nav-num">01</span>sys_log</a>
       <a href="#research"><span class="nav-num">02</span>research</a>
-      <a href="#projects"><span class="nav-num">03</span>builds</a>
+      <a href="#projects"><span class="nav-num">03</span>modules</a>
       <a href="#stack"><span class="nav-num">04</span>stack</a>
-      <a href="#contact"><span class="nav-num">05</span>contact</a>
+      <a href="#contact"><span class="nav-num">05</span>uplink</a>
     </div>
-    <a class="nav-cta" href="mailto:vishnudattaj@gmail.com">say hi →</a>
+    <a class="nav-cta" href="mailto:vishnudattaj@gmail.com">INITIATE_CONTACT →</a>
   </div>
 </nav>
 
@@ -56,11 +50,11 @@
       <span class="line2">Jayanti<span class="blip">.</span></span>
     </h1>
     <p class="hero-tag">
-      CS @ Purdue (Honors). Building ML systems with real-world applications. 
+      CS @ Purdue (Honors). Architecting ML systems and quant pipelines with verifiable real-world edge.
     </p>
     <div class="hero-actions">
-      <a href="#research" class="btn btn-primary">view research</a>
-      <a href="https://github.com/vishnudattaj" target="_blank" rel="noopener" class="btn btn-ghost">github ↗</a>
+      <a href="#research" class="btn btn-primary">ACCESS_RESEARCH</a>
+      <a href="https://github.com/vishnudattaj" target="_blank" rel="noopener" class="btn btn-ghost">GITHUB_UPLINK ↗</a>
     </div>
   </div>
 
@@ -94,24 +88,21 @@
 
   <section class="section log" id="log">
     <div class="section-inner">
-      <div class="section-header">
-        <p class="eyebrow">// 01 . SYS_LOG</p>
-        <div class="status-indicator"><span class="pulse green"></span> SYSTEM OPTIMAL</div>
-      </div>
-      <div class="log-grid">
-        <div class="glass-panel log-entry reveal">
+      <p class="eyebrow">// 01 . SYS_LOG</p>
+      <div class="log-grid reveal">
+        <div class="log-entry">
           <span class="log-tag">education</span>
           <p>B.S. Computer Science, <strong>Purdue University</strong>, John Martinson Honors College. Expected May 2030.</p>
         </div>
-        <div class="glass-panel log-entry reveal" style="transition-delay: 0.1s">
+        <div class="log-entry">
           <span class="log-tag">focus</span>
           <p>ML research, applied ML, and quant backtesting. Focused on building predictive models and systematic strategies grounded in real-world data.</p>
         </div>
-        <div class="glass-panel log-entry reveal" style="transition-delay: 0.2s">
+        <div class="log-entry">
           <span class="log-tag">approach</span>
           <p>I test things on real data before I trust them. Six projects so far, each one backtested, benchmarked, or peer reviewed in some form.</p>
         </div>
-        <div class="glass-panel log-entry reveal" style="transition-delay: 0.3s">
+        <div class="log-entry">
           <span class="log-tag">now</span>
           <p>Working on volatility-based trading strategies and looking for research or internship opportunities in ML, quant, and SWE</p>
         </div>
@@ -122,7 +113,7 @@
   <section class="section research" id="research">
     <div class="section-inner">
       <div class="section-header">
-        <p class="eyebrow">// 02 . research</p>
+        <p class="eyebrow">// 02 . RESEARCH_DATA</p>
         <h2 class="section-title">Publications</h2>
       </div>
 
@@ -157,8 +148,8 @@
   <section class="section projects" id="projects">
     <div class="section-inner">
       <div class="section-header">
-        <p class="eyebrow">// 03 . builds</p>
-        <h2 class="section-title">Projects</h2>
+        <p class="eyebrow">// 03 . ACTIVE_MODULES</p>
+        <h2 class="section-title">Engineering</h2>
       </div>
 
       <div class="project-grid">
@@ -328,14 +319,11 @@
 
   <section class="section stack" id="stack">
     <div class="section-inner">
-      <div class="section-header">
-        <p class="eyebrow">// 04 . TECH_STACK</p>
-        <h2 class="section-title">System Loadout</h2>
-      </div>
-      
-      <div class="stack-grid">
-        <div class="glass-panel stack-col reveal">
-          <div class="stack-header"><span class="pulse green"></span> LANGUAGES</div>
+      <p class="eyebrow">// 04 . stack</p>
+      <h2 class="section-title">Languages / Tools</h2>
+      <div class="stack-grid reveal">
+        <div class="stack-col">
+          <h4>languages</h4>
           <ul>
             <li>Python</li>
             <li>C</li>
@@ -343,8 +331,8 @@
             <li>CSS</li>
           </ul>
         </div>
-        <div class="glass-panel stack-col reveal" style="transition-delay: 0.1s">
-          <div class="stack-header"><span class="pulse amber"></span> ML &amp; DATA</div>
+        <div class="stack-col">
+          <h4>ml &amp; data</h4>
           <ul>
             <li>XGBoost</li>
             <li>Scikit-learn</li>
@@ -353,8 +341,8 @@
             <li>NLTK</li>
           </ul>
         </div>
-        <div class="glass-panel stack-col reveal" style="transition-delay: 0.2s">
-          <div class="stack-header"><span class="pulse green"></span> INFRA</div>
+        <div class="stack-col">
+          <h4>infra &amp; tools</h4>
           <ul>
             <li>Flask</li>
             <li>LangChain</li>
@@ -367,24 +355,24 @@
 
   <section class="section contact" id="contact">
     <div class="section-inner contact-inner">
-      <p class="eyebrow">// 05 . UPLINK</p>
-      <h2 class="contact-title">Establish Connection.</h2>
-      <p class="contact-sub">Open to research collaborations, internships, and quant/ML engineering roles.</p>
+      <p class="eyebrow">// 05 . contact</p>
+      <h2 class="contact-title">Reach Out.</h2>
+      <p class="contact-sub">Open to research collaborations, internships, and interesting problems.</p>
       <div class="contact-links reveal">
-        <a href="mailto:vishnudattaj@gmail.com" class="glass-panel contact-link">
-          <span class="contact-label">SECURE_EMAIL</span>
+        <a href="mailto:vishnudattaj@gmail.com" class="contact-link">
+          <span class="contact-label">email</span>
           <span class="contact-value">vishnudattaj@gmail.com</span>
         </a>
-        <a href="https://linkedin.com/in/vjayanti" target="_blank" rel="noopener" class="glass-panel contact-link">
-          <span class="contact-label">NETWORK</span>
+        <a href="https://linkedin.com/in/vjayanti" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-label">linkedin</span>
           <span class="contact-value">/in/vjayanti</span>
         </a>
-        <a href="https://github.com/vishnudattaj" target="_blank" rel="noopener" class="glass-panel contact-link">
-          <span class="contact-label">SOURCE_CODE</span>
+        <a href="https://github.com/vishnudattaj" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-label">github</span>
           <span class="contact-value">/vishnudattaj</span>
         </a>
-        <a href="https://scholar.google.com/citations?hl=en&user=XA1tLwkAAAAJ" target="_blank" rel="noopener" class="glass-panel contact-link">
-          <span class="contact-label">ACADEMIC</span>
+        <a href="https://scholar.google.com/citations?hl=en&user=XA1tLwkAAAAJ" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-label">scholar</span>
           <span class="contact-value">Google Scholar ↗</span>
         </a>
       </div>
