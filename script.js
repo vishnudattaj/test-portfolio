@@ -148,18 +148,27 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
 })();
 
 // ============================================
-// Card tilt on hover (subtle 3D lift)
+// Card tilt on hover (Butter smooth 3D lift)
 // ============================================
 (function cardTilt() {
   if (prefersReduced) return;
   document.querySelectorAll('.card').forEach(card => {
+    
+    card.addEventListener('mouseenter', () => {
+      // Remove the smooth transition momentarily so mouse tracking is instantaneous
+      card.style.transition = 'background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease';
+    });
+
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `translateY(-4px) rotateX(${-y * 4}deg) rotateY(${x * 4}deg)`;
+      card.style.transform = `translateY(-6px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg) scale3d(1.02, 1.02, 1.02)`;
     });
+    
     card.addEventListener('mouseleave', () => {
+      // Re-enable the smooth transition for the snap-back effect
+      card.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
       card.style.transform = '';
     });
   });
