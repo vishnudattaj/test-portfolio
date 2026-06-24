@@ -148,26 +148,22 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
 })();
 
 // ============================================
-// Card tilt on hover (Butter smooth 3D lift)
+// Card tilt on hover (updated for smoothness)
 // ============================================
 (function cardTilt() {
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) return;
-  
   document.querySelectorAll('.card').forEach(card => {
-    
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
       
-      // The CSS 0.3s transition will cause this to glide smoothly behind the cursor
-      // without snapping on the initial hover.
-      card.style.transform = `translateY(-6px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg) scale3d(1.01, 1.01, 1.01)`;
+      // Applying the transform; CSS transition will now smooth this
+      card.style.transform = `translateY(-8px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg)`;
     });
     
     card.addEventListener('mouseleave', () => {
-      // Clear the inline style so it glides back to the default CSS state seamlessly
+      // Return to original state
       card.style.transform = '';
     });
   });
