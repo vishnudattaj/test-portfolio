@@ -151,24 +151,23 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
 // Card tilt on hover (Butter smooth 3D lift)
 // ============================================
 (function cardTilt() {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReduced) return;
+  
   document.querySelectorAll('.card').forEach(card => {
     
-    card.addEventListener('mouseenter', () => {
-      // Remove the smooth transition momentarily so mouse tracking is instantaneous
-      card.style.transition = 'background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease';
-    });
-
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `translateY(-6px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg) scale3d(1.02, 1.02, 1.02)`;
+      
+      // The CSS 0.3s transition will cause this to glide smoothly behind the cursor
+      // without snapping on the initial hover.
+      card.style.transform = `translateY(-6px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg) scale3d(1.01, 1.01, 1.01)`;
     });
     
     card.addEventListener('mouseleave', () => {
-      // Re-enable the smooth transition for the snap-back effect
-      card.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+      // Clear the inline style so it glides back to the default CSS state seamlessly
       card.style.transform = '';
     });
   });
