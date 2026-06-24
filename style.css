@@ -4,21 +4,23 @@
 :root {
   --bg: #03060A;
   
-  /* Apple Physical Glass Whiteboard Tokens */
-  --bg-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(240, 245, 255, 0.01) 50%, rgba(255, 255, 255, 0.02) 100%);
-  --bg-glass-hover: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(240, 245, 255, 0.03) 50%, rgba(255, 255, 255, 0.05) 100%);
+  /* Glass Whiteboard Tokens — light, frosted, transparent */
+  --bg-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.11) 0%, rgba(220, 232, 255, 0.07) 50%, rgba(255, 255, 255, 0.09) 100%);
+  --bg-glass-hover: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(220, 232, 255, 0.12) 50%, rgba(255, 255, 255, 0.15) 100%);
   
-  /* Polished glass whiteboard bevel edge (light tint) */
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-edge-highlight: rgba(255, 255, 255, 0.22); 
+  /* Polished glass whiteboard bevel edge */
+  --glass-border: rgba(255, 255, 255, 0.22);
+  --glass-edge-highlight: rgba(255, 255, 255, 0.55);
   --glass-radius: 16px;
   
-  /* Multi-layered physical depth shadow */
+  /* Lighter, glassier shadow with top-edge white reflection */
   --glass-shadow: 
-    0 1px 2px rgba(0, 0, 0, 0.3),
-    0 12px 24px rgba(0, 0, 0, 0.45),
-    0 32px 64px -12px rgba(0, 0, 0, 0.5),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.03); /* Interior crystal clarity boundary */
+    0 1px 0 rgba(255, 255, 255, 0.18),           /* top-edge light catch */
+    0 2px 6px rgba(0, 0, 0, 0.18),
+    0 12px 28px rgba(0, 0, 0, 0.28),
+    0 32px 64px -12px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),      /* interior top shine */
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);    /* crystal boundary */
   
   --ink: #F0F4F8;
   --ink-dim: #A2B1C6;
@@ -183,30 +185,36 @@ ul { list-style: none; }
 .glass-panel {
   background: var(--bg-glass);
   
-  /* Massive structural refraction */
-  backdrop-filter: blur(40px) saturate(160%);
-  -webkit-backdrop-filter: blur(40px) saturate(160%);
+  /* Frosted glass whiteboard refraction */
+  backdrop-filter: blur(40px) saturate(180%) brightness(1.08);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.08);
   
-  /* Clean cut polished crystal borders */
+  /* Polished crystal borders */
   border: 1px solid var(--glass-border);
   border-top-color: var(--glass-edge-highlight); 
   border-left-color: var(--glass-edge-highlight); 
   border-radius: var(--glass-radius);
   
-  /* Hyper-realistic volumetric shadows */
+  /* Volumetric shadows with white top-edge catch */
   box-shadow: var(--glass-shadow);
   
   position: relative;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Glass panel gloss overlay effect */
+/* Glass panel gloss overlay — whiteboard inner light sheen */
 .glass-panel::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: calc(var(--glass-radius) - 1px);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 40%, rgba(255, 255, 255, 0.01) 40%, transparent 100%);
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.06) 25%,
+    transparent 55%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
   pointer-events: none;
   z-index: 2;
 }
@@ -244,8 +252,8 @@ ul { list-style: none; }
 
 .terminal-block {
   background: var(--bg-glass);
-  backdrop-filter: blur(40px) saturate(160%);
-  -webkit-backdrop-filter: blur(40px) saturate(160%);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
   
   border: 1px solid var(--glass-border);
   border-top-color: var(--glass-edge-highlight);
@@ -260,15 +268,20 @@ ul { list-style: none; }
 
 .terminal-block::after {
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 35%);
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.06) 25%,
+    transparent 55%
+  );
   z-index: 2;
 }
 
 .term-bar {
   display: flex; align-items: center; justify-content: space-between;
   padding: 12px 18px; 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.07);
   position: relative; z-index: 3;
 }
 .term-dots { display: flex; gap: 8px; }
