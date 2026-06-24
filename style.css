@@ -4,23 +4,21 @@
 :root {
   --bg: #03060A;
   
-  /* Glass Whiteboard Tokens — light, frosted, transparent */
-  --bg-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.11) 0%, rgba(220, 232, 255, 0.07) 50%, rgba(255, 255, 255, 0.09) 100%);
-  --bg-glass-hover: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(220, 232, 255, 0.12) 50%, rgba(255, 255, 255, 0.15) 100%);
+  /* Real glass tokens — transparent, not frosted */
+  --bg-glass: rgba(255, 255, 255, 0.03);
+  --bg-glass-hover: rgba(255, 255, 255, 0.06);
   
-  /* Polished glass whiteboard bevel edge */
-  --glass-border: rgba(255, 255, 255, 0.22);
-  --glass-edge-highlight: rgba(255, 255, 255, 0.55);
+  /* Sharp bright rim — this is what makes glass read as glass */
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-edge-highlight: rgba(255, 255, 255, 0.50);
   --glass-radius: 16px;
   
-  /* Lighter, glassier shadow with top-edge white reflection */
-  --glass-shadow: 
-    0 1px 0 rgba(255, 255, 255, 0.18),           /* top-edge light catch */
-    0 2px 6px rgba(0, 0, 0, 0.18),
-    0 12px 28px rgba(0, 0, 0, 0.28),
-    0 32px 64px -12px rgba(0, 0, 0, 0.32),
-    inset 0 1px 0 rgba(255, 255, 255, 0.22),      /* interior top shine */
-    inset 0 0 0 1px rgba(255, 255, 255, 0.06);    /* crystal boundary */
+  /* Thin sharp shadow + crisp inset top shine */
+  --glass-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.12),
+    0 4px 16px rgba(0, 0, 0, 0.35),
+    0 24px 48px -8px rgba(0, 0, 0, 0.40),
+    inset 0 1px 0 rgba(255, 255, 255, 0.30);
   
   --ink: #F0F4F8;
   --ink-dim: #A2B1C6;
@@ -185,35 +183,31 @@ ul { list-style: none; }
 .glass-panel {
   background: var(--bg-glass);
   
-  /* Frosted glass whiteboard refraction */
-  backdrop-filter: blur(40px) saturate(180%) brightness(1.08);
-  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.08);
+  /* Minimal blur — real glass is clear, not frosted */
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
   
-  /* Polished crystal borders */
   border: 1px solid var(--glass-border);
   border-top-color: var(--glass-edge-highlight); 
   border-left-color: var(--glass-edge-highlight); 
   border-radius: var(--glass-radius);
   
-  /* Volumetric shadows with white top-edge catch */
   box-shadow: var(--glass-shadow);
   
   position: relative;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Glass panel gloss overlay — whiteboard inner light sheen */
+/* Glass panel — thin specular glint, not a milky sweep */
 .glass-panel::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: calc(var(--glass-radius) - 1px);
   background: linear-gradient(
-    160deg,
-    rgba(255, 255, 255, 0.14) 0%,
-    rgba(255, 255, 255, 0.06) 25%,
-    transparent 55%,
-    rgba(255, 255, 255, 0.03) 100%
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 20%
   );
   pointer-events: none;
   z-index: 2;
@@ -252,8 +246,8 @@ ul { list-style: none; }
 
 .terminal-block {
   background: var(--bg-glass);
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
   
   border: 1px solid var(--glass-border);
   border-top-color: var(--glass-edge-highlight);
@@ -268,20 +262,15 @@ ul { list-style: none; }
 
 .terminal-block::after {
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(
-    160deg,
-    rgba(255, 255, 255, 0.14) 0%,
-    rgba(255, 255, 255, 0.06) 25%,
-    transparent 55%
-  );
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 20%);
   z-index: 2;
 }
 
 .term-bar {
   display: flex; align-items: center; justify-content: space-between;
   padding: 12px 18px; 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.04);
   position: relative; z-index: 3;
 }
 .term-dots { display: flex; gap: 8px; }
